@@ -3,6 +3,9 @@ from datetime import timedelta, datetime
 
 #Based on youtube format, for the duration of videos we have break down duration into a form we can understand
 def parse_duration(duration_str):
+
+    #Method chaining is a programming technique that allows multiple methods to be called on the same object in a 
+    # single, continuous line of code.
     duration_str = duration_str.replace("P", "").replace("T", "")
 
     components = ['D', 'H', 'M', 'S']
@@ -19,7 +22,7 @@ def parse_duration(duration_str):
     )
 
     return total_duration
-
+ # 'row' represents one row in the staging table that will be looped through 
 def transform_data(row):
 
     duration_td = parse_duration(row['Duration'])
